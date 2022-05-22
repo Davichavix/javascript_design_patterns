@@ -43,6 +43,7 @@ class ToyFactory {
       else if (toyChosen.toyType == "car") {
         this.toy = ToyCar;
       }
+      return new this.toy(toyChosen)
     }
   }
 }
