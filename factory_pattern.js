@@ -66,3 +66,5 @@ const car = toyFactory.createToy({
   price : 12,
   name : "honda",
 })
+
+console.log(car)
