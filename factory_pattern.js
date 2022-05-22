@@ -30,3 +30,38 @@ const iceCreamFactory = new IceCreamFactory();
 const chocolate = iceCreamFactory.createIcecream('chocolate');
 
 console.log(chocolate.message())
+
+
+
+class ToyFactory {
+  constructor() {
+    this.toy = ToyDuck;
+    this.createToy = function(toyChosen) {
+      if (toyChosen.toyType == "duck") {
+        this.toy = ToyDuck;
+      }
+      else if (toyChosen.toyType == "car") {
+        this.toy = ToyCar;
+      }
+    }
+  }
+}
+
+function ToyDuck(toyObj) {
+  this.color = toyObj.color;
+  this.price = toyObj.price;
+}
+
+function ToyCar(toyObj) {
+  this.color = toyObj.color;
+  this.price = toyObj.price;
+  this.name = toyObj.name;
+}
+
+const toyFactory = new ToyFactory()
+const car = toyFactory.createToy({
+  toyType: "car",
+  color: "blue",
+  price : 12,
+  name : "honda",
+})
